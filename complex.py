@@ -144,10 +144,3 @@ class Complex(namedtuple('Complex', 're, im')):
         rght = Complex.exponent(Complex(-number.im, number.re))
         y = (Complex(-(left.im - rght.im), (left.re - rght.re))) / (Complex(-(left.im + rght.im), (left.re + rght.re)))
         return Complex(-y.im, y.re)
-
-
-
-    # any
-    # all
-    # zip
-    # *
