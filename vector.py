@@ -11,9 +11,9 @@ class Vector(list):
 
     def __add__(self, other) -> 'Vector':
         if isinstance(other, Vector):
-            return Vector(*(a + b for a, b in zip(self, other)))
+            return Vector(a + b for a, b in zip(self, other))
         if isinstance(other, float) or isinstance(other, int):
-            return Vector(*(a + other for a in self))
+            return Vector(a + other for a in self)
         raise ValueError(f"Имеется непригодный тип данных {type(other)}")
 
     def __iadd__(self, other) -> 'Vector':
@@ -33,9 +33,9 @@ class Vector(list):
 
     def __sub__(self, other) -> 'Vector':
         if isinstance(other, Vector):
-            return Vector(*(a - b for a, b in zip(self, other)))
+            return Vector(a - b for a, b in zip(self, other))
         if isinstance(other, float) or isinstance(other, int):
-            return Vector(*(a - other for a in self))
+            return Vector(a - other for a in self)
         raise ValueError(f"Имеется непригодный тип данных {type(other)}")
 
     def __isub__(self, other) -> 'Vector':
@@ -53,39 +53,39 @@ class Vector(list):
 
     def __rsub__(self, other) -> 'Vector':
         if isinstance(other, Vector):
-            return Vector(*(b - a for a, b in zip(self, other)))
+            return Vector(b - a for a, b in zip(self, other))
         if isinstance(other, float) or isinstance(other, int):
-            return Vector(*(other - a for a in self))
+            return Vector(other - a for a in self)
         raise ValueError(f"Имеется непригодный тип данных {type(other)}")
 
     def __mul__(self, other) -> 'Vector':
         if isinstance(other, Vector):
-            return Vector(*(a * b for a, b in zip(self, other)))
+            return Vector(a * b for a, b in zip(self, other))
         if isinstance(other, float) or isinstance(other, int):
-            return Vector(*(a * other for a in self))
+            return Vector(a * other for a in self)
         raise ValueError(f"Имеется непригодный тип данных {type(other)}")
 
     __imul__ = __add__
 
     def __rmul__(self, other) -> 'Vector':
         if isinstance(other, Vector):
-            return Vector(*(b * a for a, b in zip(self, other)))
+            return Vector(b * a for a, b in zip(self, other))
         if isinstance(other, float) or isinstance(other, int):
-            return Vector(*(other * a for a in self))
+            return Vector(other * a for a in self)
         raise ValueError(f"Имеется непригодный тип данных {type(other)}")
 
     def __truediv__(self, other) -> 'Vector':
         if isinstance(other, Vector):
-            return Vector(*(a / b for a, b in zip(self, other)))
+            return Vector(a / b for a, b in zip(self, other))
         if isinstance(other, float) or isinstance(other, int):
-            return Vector(*(a / other for a in self))
+            return Vector(a / other for a in self)
         raise ValueError(f"Имеется непригодный тип данных {type(other)}")
 
     def __rtruediv__(self, other) -> 'Vector':
         if isinstance(other, Vector):
-            return Vector(*(b / a for a, b in zip(self, other)))
+            return Vector(b / a for a, b in zip(self, other))
         if isinstance(other, float) or isinstance(other, int):
-            return Vector(*(other / a for a in self))
+            return Vector(other / a for a in self)
         raise ValueError(f"Имеется непригодный тип данных {type(other)}")
 
     __itruediv__  = __truediv__
