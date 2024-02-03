@@ -44,11 +44,11 @@ class Vector(list):
                 raise ValueError(f"Размеры данных векторов не совпадают {type(other)}")
             for i, v in enumerate(other):
                 self[i] -= v
-            return Vector(*self)
+            return Vector(self)
         if isinstance(other, float) or isinstance(other, int):
             for i in range(self.count):
                 self[i] -= other
-            return Vector(*self)
+            return Vector(self)
         raise ValueError(f"Имеется непригодный тип данных {type(other)}")
 
     def __rsub__(self, other) -> 'Vector':
